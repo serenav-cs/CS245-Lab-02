@@ -8,12 +8,15 @@ import java.util.Arrays;
 
 public class TwoSum {
     public int[] twoSum(int[] num, int sum) {
+        //array that stores indices that sum to the targeted number
         int[] sumIndices = new int[2];
+        
+        //array with only one elements to return -1 if no two indices are found that add up to the sum target 
         int[] noSolution = {-1};
         for (int i = 0; i < num.length - 1; i++){
             for (int j = i + 1; j < num.length; j++) {
                 if ((num[i] + num[j]) == sum) {
-                    sumIndices[0] = i;
+                    sumIndices[0] = i; 
                     sumIndices[1] = j;
                     return sumIndices;
                 }
